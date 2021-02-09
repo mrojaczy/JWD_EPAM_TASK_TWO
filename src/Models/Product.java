@@ -1,3 +1,5 @@
 package Models;
 
-public interface Product {}
+public interface Product {
+    String toString();
+}

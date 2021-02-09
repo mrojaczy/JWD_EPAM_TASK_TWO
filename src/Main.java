@@ -22,7 +22,7 @@ public class Main {
 
         var productsList = createProductList(productsStringList);
         for (var product : productsList) {
-            System.out.println(product);
+            System.out.println(product.toString());
         }
     }
 

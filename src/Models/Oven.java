@@ -1,5 +1,7 @@
 package Models;
 
+import java.text.MessageFormat;
+
 public class Oven implements Product {
     private final int powerConsumption;
     private final int weight;
@@ -39,5 +41,10 @@ public class Oven implements Product {
 
     public double getWidth() {
         return width;
+    }
+
+    @Override
+    public String toString() {
+        return MessageFormat.format("[{0}, {1}, {2}, {3}, {4}, {5}]", getPowerConsumption(), getWeight(), getCapacity(), getDepth(), getHeight(), getWidth());
     }
 }
