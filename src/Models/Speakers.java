@@ -1,15 +1,45 @@
-package Models;
+package models;
 
-public class Speakers {
-    private int POWER_CONSUMPTION;
-    private int NUMBER_OF_SPEAKERS;
-    private int[] FREQUENCY_RANGE; // ?
-    private int CORD_LENGTH;
+import java.text.MessageFormat;
 
-    public Speakers(int POWER_CONSUMPTION, int NUMBER_OF_SPEAKERS, int[] FREQUENCY_RANGE, int CORD_LENGTH) {
-        this.POWER_CONSUMPTION = POWER_CONSUMPTION;
-        this.NUMBER_OF_SPEAKERS = NUMBER_OF_SPEAKERS;
-        this.FREQUENCY_RANGE = FREQUENCY_RANGE;
-        this.CORD_LENGTH = CORD_LENGTH;
+public class Speakers implements Product {
+    private final int powerConsumption;
+    private final int numberOfSpeakers;
+    private final String frequencyRange;
+    private final int cordLength;
+    private final double price;
+
+    public Speakers(int powerConsumption, int numberOfSpeakers, String frequencyRange, int cordLength, double price) {
+        this.powerConsumption = powerConsumption;
+        this.numberOfSpeakers = numberOfSpeakers;
+        this.frequencyRange = frequencyRange;
+        this.cordLength = cordLength;
+        this.price = price;
+    }
+
+    public int getPowerConsumption() {
+        return powerConsumption;
+    }
+
+    public int getNumberOfSpeakers() {
+        return numberOfSpeakers;
+    }
+
+    public String getFrequencyRange() {
+        return frequencyRange;
+    }
+
+    public int getCordLength() {
+        return cordLength;
+    }
+
+    @Override
+    public double getPrice() {
+        return price;
+    }
+
+    @Override
+    public String toString() {
+        return MessageFormat.format("[{0}, {1}, {2}, {3}, {4}]", getPowerConsumption(), getNumberOfSpeakers(), getFrequencyRange(), getCordLength(), getPrice());
     }
 }

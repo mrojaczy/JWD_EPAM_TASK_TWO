@@ -1,7 +1,7 @@
 package factory;
 
-import Models.Laptop;
-import Models.Product;
+import models.Laptop;
+import models.Product;
 
 import java.util.List;
 
@@ -15,7 +15,8 @@ public class LaptopBase extends Base {
         int systemMemory  = Integer.parseInt(params.get(3));
         double CPU = Double.parseDouble(params.get(4));
         int displayInches  = Integer.parseInt(params.get(5));
+        double price = Double.parseDouble(params.get(6));
 
-        return new Laptop(batteryCapacity, OS, memoryROM, systemMemory, CPU, displayInches);
+        return new Laptop(batteryCapacity, OS, memoryROM, systemMemory, CPU, displayInches, price);
     }
 }

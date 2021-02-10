@@ -1,19 +1,57 @@
-package Models;
+package models;
 
-public class VacuumCleaner {
-    private int POWER_CONSUMPTION;
-    private char FILTER_TYPE;
-    private String BAG_TYPE;
-    private String WAND_TYPE;
-    private int MOTOR_SPEED_REGULATION;
-    private int CLEANING_WIDTH;
+import java.text.MessageFormat;
 
-    public VacuumCleaner(int POWER_CONSUMPTION, char FILTER_TYPE, String BAG_TYPE, String WAND_TYPE, int MOTOR_SPEED_REGULATION, int CLEANING_WIDTH) {
-        this.POWER_CONSUMPTION = POWER_CONSUMPTION;
-        this.FILTER_TYPE = FILTER_TYPE;
-        this.BAG_TYPE = BAG_TYPE;
-        this.WAND_TYPE = WAND_TYPE;
-        this.MOTOR_SPEED_REGULATION = MOTOR_SPEED_REGULATION;
-        this.CLEANING_WIDTH = CLEANING_WIDTH;
+public class VacuumCleaner implements Product {
+    private final int powerConsumption;
+    private final char filterType;
+    private final String bagType;
+    private final String wandType;
+    private final int motorSpeedRegulation;
+    private final int cleaningWidth;
+    private final double price;
+
+    public VacuumCleaner(int powerConsumption, char filterType, String bagType, String wandType, int motorSpeedRegulation, int cleaningWidth, double price) {
+        this.powerConsumption = powerConsumption;
+        this.filterType = filterType;
+        this.bagType = bagType;
+        this.wandType = wandType;
+        this.motorSpeedRegulation = motorSpeedRegulation;
+        this.cleaningWidth = cleaningWidth;
+        this.price = price;
+    }
+
+    public int getPowerConsumption() {
+        return powerConsumption;
+    }
+
+    public char getFilterType() {
+        return filterType;
+    }
+
+    public String getBagType() {
+        return bagType;
+    }
+
+    public String getWandType() {
+        return wandType;
+    }
+
+    public int getMotorSpeedRegulation() {
+        return motorSpeedRegulation;
+    }
+
+    public int getCleaningWidth() {
+        return cleaningWidth;
+    }
+
+    @Override
+    public double getPrice() {
+        return price;
+    }
+
+    @Override
+    public String toString() {
+        return MessageFormat.format("[{0}, {1}, {2}, {3}, {4}, {5}, {6}]", getPowerConsumption(), getFilterType(), getBagType(), getWandType(), getMotorSpeedRegulation(), getCleaningWidth(), getPrice());
     }
 }

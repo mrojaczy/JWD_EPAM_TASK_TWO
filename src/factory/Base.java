@@ -1,6 +1,6 @@
 package factory;
 
-import Models.Product;
+import models.Product;
 
 import java.util.List;
 

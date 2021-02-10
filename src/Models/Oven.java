@@ -1,4 +1,4 @@
-package Models;
+package models;
 
 import java.text.MessageFormat;
 
@@ -9,14 +9,16 @@ public class Oven implements Product {
     private final int depth;
     private final double height;
     private final double width;
+    private final double price;
 
-    public Oven(int powerConsumption, int weight, int capacity, int depth, double height, double width) {
+    public Oven(int powerConsumption, int weight, int capacity, int depth, double height, double width, double price) {
         this.powerConsumption = powerConsumption;
         this.weight = weight;
         this.capacity = capacity;
         this.depth = depth;
         this.height = height;
         this.width = width;
+        this.price = price;
     }
 
     public int getPowerConsumption() {
@@ -44,7 +46,13 @@ public class Oven implements Product {
     }
 
     @Override
-    public String toString() {
-        return MessageFormat.format("[{0}, {1}, {2}, {3}, {4}, {5}]", getPowerConsumption(), getWeight(), getCapacity(), getDepth(), getHeight(), getWidth());
+    public double getPrice() {
+        return price;
     }
+
+    @Override
+    public String toString() {
+        return MessageFormat.format("[{0}, {1}, {2}, {3}, {4}, {5}, {6}]", getPowerConsumption(), getWeight(), getCapacity(), getDepth(), getHeight(), getWidth(), getPrice());
+    }
+
 }
